@@ -1,0 +1,18 @@
+# Byte-compiled / optimized / DLL modules
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local testing folders
+test_downloads/
+
+# Idea IDE files
+.idea
