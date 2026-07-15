@@ -18,6 +18,7 @@ def main():
 
     # Iterate over the subdirectories, check if each exists in main downloads folder, if not create it
     for subdirectory in ORGANIZED_SUBDIRECTORIES:
+        pass
 
 
 
