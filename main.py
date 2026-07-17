@@ -16,9 +16,13 @@ def main():
         "Miscellaneous" : []
     }
 
-    # Iterate over the subdirectories, check if each exists in main downloads folder, if not create it
+    # Iterate over the subdirectories, check if each subdir exists in main downloads folder, if not create it
     for subdirectory in ORGANIZED_SUBDIRECTORIES:
-        pass
+        current_subdirectory_path = os.path.join(downloads_directory, subdirectory)
+        if not os.path.isdir(current_subdirectory_path):
+            os.mkdir(current_subdirectory_path)
+
+    # 
 
 
 
