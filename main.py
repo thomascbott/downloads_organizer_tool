@@ -1,4 +1,5 @@
 import os
+import shutil
 
 def main():
 
@@ -22,7 +23,11 @@ def main():
         if not os.path.isdir(current_subdirectory_path):
             os.mkdir(current_subdirectory_path)
 
-    # 
+    # Iterate over files inside the downloads folder and move them based on dictionary key-value pairs
+    for file in os.listdir(downloads_directory):
+        file_path = os.path.join(downloads_directory, file)
+        if os.path.isfile(file_path):
+            shutil.move(file_path, )
 
 
 
