@@ -5,8 +5,12 @@ from pathlib import Path
 def main():
 
     # Get the user's donwloads folder path
-    user_directory = os.path.expanduser('~')
-    downloads_directory = os.path.join(user_directory, 'Downloads')
+    # user_directory = os.path.expanduser('~')
+    # downloads_directory = os.path.join(user_directory, 'Downloads')
+
+    # FOR TESTING ONLY - Uncomment above lines when testing is completed ###########################
+    downloads_directory = r"C:\Users\thoma\PycharmProjects\downloads-organizer-tool\test_downloads"
+    #################################################
 
     # Create dictionary for organizing subdirectories and assigning file types
     ORGANIZED_SUBDIRECTORIES = {
