@@ -1,5 +1,6 @@
 import os
 import shutil
+from pathlib import Path
 
 def main():
 
@@ -27,7 +28,22 @@ def main():
     for file in os.listdir(downloads_directory):
         file_path = os.path.join(downloads_directory, file)
         if os.path.isfile(file_path):
-            shutil.move(file_path, )
+            # Create a Path object so that use of the suffix property is possible
+            current_file_path = Path(file_path)
+            current_file_type = current_file_path.suffix
+
+            # Iterate over the dictionary to find what subdirectory the file type is associated with and store that
+            # subdirectory as the destination folder
+            for key, value in ORGANIZED_SUBDIRECTORIES:
+                if current_file_type == value:
+                    dest_folder = key
+                    # Create path and move file to destination folder
+                    dest_folder_path = os.path.join(downloads_directory, dest_folder)
+                    shutil.move(current_file_path, dest_folder_path)
+
+                    # CURRENT ISSUE --- How can we store the unlisted file types in the Miscellaneous folder
+
+
 
 
 
