@@ -38,8 +38,8 @@ def main():
 
             # Iterate over the dictionary to find what subdirectory the file type is associated with and store that
             # subdirectory as the destination folder
-            for key, value in ORGANIZED_SUBDIRECTORIES:
-                if current_file_type == value:
+            for key, value in ORGANIZED_SUBDIRECTORIES.items():
+                if current_file_type in value:
                     dest_folder = key
                     # Create path and move file to destination folder
                     dest_folder_path = os.path.join(downloads_directory, dest_folder)
