@@ -38,12 +38,21 @@ def main():
 
             # Iterate over the dictionary to find what subdirectory the file type is associated with and store that
             # subdirectory as the destination folder
+            is_file_found = False
             for key, value in ORGANIZED_SUBDIRECTORIES.items():
                 if current_file_type in value:
                     dest_folder = key
                     # Create path and move file to destination folder
                     dest_folder_path = os.path.join(downloads_directory, dest_folder)
                     shutil.move(current_file_path, dest_folder_path)
+                    is_file_found = True
+
+            # If file match was not found, then move to Miscellaneous
+            if not is_file_found:
+                dest_folder_path = os.path.join(downloads_directory, "Miscellaneous")
+                shutil.move(current_file_path, dest_folder_path)
+
+
 
                     # CURRENT ISSUE --- How can we store the unlisted file types in the Miscellaneous folder
 
