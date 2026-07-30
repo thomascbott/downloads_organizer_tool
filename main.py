@@ -5,12 +5,12 @@ from pathlib import Path
 def main():
 
     # Get the user's donwloads folder path
-    # user_directory = os.path.expanduser('~')
-    # downloads_directory = os.path.join(user_directory, 'Downloads')
+    user_directory = os.path.expanduser('~')
+    downloads_directory = os.path.join(user_directory, 'Downloads')
 
-    # FOR TESTING ONLY - Uncomment above lines when testing is completed ###########################
-    downloads_directory = r"C:\Users\thoma\PycharmProjects\downloads-organizer-tool\test_downloads"
-    #################################################
+    # BELOW FOR TESTING ONLY - Uncomment above lines when testing is completed ###########################
+    #downloads_directory = r"C:\Users\thoma\PycharmProjects\downloads-organizer-tool\test_downloads"
+    ################################################################################################
 
     # Create dictionary for organizing subdirectories and assigning file types
     ORGANIZED_SUBDIRECTORIES = {
@@ -51,16 +51,6 @@ def main():
             if not is_file_found:
                 dest_folder_path = os.path.join(downloads_directory, "Miscellaneous")
                 shutil.move(current_file_path, dest_folder_path)
-
-
-
-                    # CURRENT ISSUE --- How can we store the unlisted file types in the Miscellaneous folder
-
-
-
-
-
-    print(downloads_directory)
 
 if __name__ == '__main__':
     main()
